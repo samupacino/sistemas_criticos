@@ -1,0 +1,17 @@
+#contenedorRegistro{
+    margin: 10px 10px 10px 10px;
+    display: flex;  
+    text-align: center;
+    justify-content: center;
+}
+#contenedorRegistro p,a{
+    height: auto;
+    width: auto;
+}
+#contenedorRegistro div{
+    height: 180px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
