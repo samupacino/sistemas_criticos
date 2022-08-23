@@ -1,5 +1,5 @@
 <?php
-    
+    require_once"modelo/consultas.php";
     session_start();
 
     if(true){

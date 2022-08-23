@@ -5,7 +5,7 @@
         require_once"modal/mensajeError.php";
     ?>
     
-    <button type="button" class="btn btn-primary" id="prueba">PRUEBA</button>
+    <a href="index.php?registro&samuel" class="btn btn-primary" id="prueba">PRUEBA</a>
     <form action=""  id="sistemaform" method="POST">
         <table>
             <thead>
@@ -44,13 +44,13 @@
                     document.getElementById("mensajeServer").remove();
                 }
             });
-
+            /*
             document.getElementById("prueba").addEventListener("click",function(){
                 const myModal_error = new bootstrap.Modal(document.getElementById('mensajeError'), {
                      keyboard: false,
                 });
             myModal_error.show();
-            });
+            });*/
         }
     </script>
     
