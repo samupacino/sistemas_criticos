@@ -7,7 +7,7 @@
         public function __construct(){
             
         }
-        public static function conexion(){
+        public static function open(){
             self::$pdo=null;
             self::parametros();
             self::$pdo = new PDO(self::$dsn, self::$username, self::$password);
@@ -16,25 +16,20 @@
           return self::$pdo;
         }
         private  static function parametros(){
+            
+            self::$dsn="mysql:host=localhost;dbname=sistemascriticos";
+            self::$username="root";
+            self::$password="samuellujan1989";
             /*
-            ConexionBBDD::$dsn="mysql:host=localhost;dbname=sistemascriticos";
-            ConexionBBDD::$username="root";
-            ConexionBBDD::$password="samuellujan1989";
-            */
             self::$dsn="mysql:host=localhost;dbname=sistemascriticos";
             self::$username="root";
             self::$password="root";
+            */
         }
-        public static function referencia(&$pd){
-            $pd = null;
+        public static function close(&$db,&$ps){
             self::$pdo=null;
-        }
-        public static function status(){
-            if(self::$pdo == null){
-                echo "nulo pdo";
-            }else{
-                echo "pdo contruido";
-            }
+            $pd = null;
+            $ps = null;   
         }
     }
 

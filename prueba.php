@@ -9,14 +9,12 @@
 
         $datos = ["samuel","lujan","sarasi"];
         $datosdos = ["ines","lujan","sarasi"];
-
-        $conexio = Conexion::conexion();
+        echo "<h1>Samuel</h1>";
+        $conexio = Conexion::open();
         $ps = $conexio->prepare("INSERT INTO instrumento (instID,instDescripcion,instNormaCodigo) VALUES(?,?,?)");
         $ps->execute(array($datos[0],$datos[1],$datos[2]));
         ///////////////
-        Conexion::status();
-        Conexion::referencia($conexio);
-        Conexion::status();
+
         $ps = $conexio->prepare("SELECT * FROM instrumento");
         $ps->execute();
         $resultado = $ps->fetchAll();

@@ -4,25 +4,30 @@
         require_once"modal/validaInputs.php";
         require_once"modal/mensajeError.php";
     ?>
-    
-    <a href="index.php?registro&samuel" class="btn btn-primary" id="prueba">PRUEBA</a>
-    <form action=""  id="sistemaform" method="POST">
-        <table>
-            <thead>
-                <th>INSTRUMENTO</th>
-                <th>DESCRIPCION</th>
-                <th>SISTEMA CRITICO</th>
-                <th>GUARDAR</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><input type="text" name="instrumento" class="datos"></td>
-                    <td><input type="text" name="descripcion" class="datos"></td>
-                    <td><input type="text" name="norma" class="datos"></td>
-                    <td><input type="" class="btn btn-danger"  name="guardar" id="GUARDAR" value="GUARDAR"></input></td>
-                </tr>
-            </tbody>
-        </table>
+    <br>
+    <form action="index.php?registro&guardar"  id="sistemaform" method="POST">
+        <div class="container-sm font-monospace">
+            <h2 class="centrado">REGISTRO DE INSTRUMENTOS</h2>
+            <table class="table table-striped centrado">
+                <thead>
+                    <th >INSTRUMENTO</th>
+                    <th>DESCRIPCION</th>
+                    <th>SISTEMA CRITICO</th>
+                    <th>GUARDAR</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" name="instrumento" class="datos"></td>
+                        <td><input type="text" name="descripcion" class="datos"></td>
+                        <td><input type="text" name="norma" class="datos"></td>
+                        <td><input type="" class="btn btn-danger"  name="guardar" id="GUARDAR" value="GUARDAR"></input></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <a href="index.php" class="btn btn-primary" id="prueba">REGRESAR MENÚ PRINCIPAL</a>
+            </div>
+    </div>
     </form>
     <script src="public/javascript/mensaje.js"></script>
     <script>
@@ -31,7 +36,7 @@
             validaFormulario();
            });
            document.getElementById("saveChanges").addEventListener("click",function(){
-            guardarDatoServidor();
+                guardarDatoServidor();
            });
            document.getElementById("cancelar").addEventListener("click",function(){
             limpiaInputs();

@@ -22,8 +22,8 @@ function validaFormulario(){
         }
 }
 function guardarDatoServidor(){
-    var formulario = document.getElementById('sistemaform');
-    formulario.submit();
+        var formulario = document.getElementById('sistemaform');
+        formulario.submit();
 }
 function limpiaInputs(){
     var inputDatos = document.getElementsByClassName('datos');

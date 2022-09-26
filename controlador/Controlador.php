@@ -1,29 +1,31 @@
 <?php
-    require_once"modelo/consultas.php";
+    require_once"modelo/Consultas.php";
 
-    class Controllersistemacritico{
-        
-        private $querys;
+    class Controlador{
 
         public function __construct(){
             
         }
         public function index(){
+            $querys = new Consultas();
+            $resultado = $querys->listar();
             require_once"vista/main.php";
         }
-        public function registro_save(){
+        public function guardar(){
                 $querys = new Consultas();
                 $datoArreglo = array();
                 $datoArreglo['instrumento'] = $_POST['instrumento'];
                 $datoArreglo['descripcion'] = $_POST['descripcion'];
                 $datoArreglo['norma'] = $_POST['norma'];
-                if($querys->Insertar($datoArreglo)){
-                    $_SESSION['mensaje'] = "<p id='mensajeServer' >" . $querys->getMensaje() . "</p>";
-                }
-                require_once"vista/registro.php";
+                $querys->insertar($datoArreglo);
+                header('Location: index.php?registro');
         }
-        public function registro_view(){
+    
+        public function registro(){
             require_once"vista/registro.php";
+        }
+        public function eliminar(){
+            
         }
 
     }

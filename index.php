@@ -1,18 +1,16 @@
 <?php
-    require_once"modelo/consultas.php";
     session_start();
-
-    if(true){
-        require_once"controlador/Controller_sistema.php";
-        $proceso = new Controllersistemacritico();
-        if(isset($_GET['registro'])){
-            if(isset($_POST['guardar'])){
-                $proceso->registro_save();
-            }else{
-                $proceso->registro_view();
-            }
+    require_once"controlador/Controlador.php";
+?>
+<?php
+    $controlador = new Controlador();
+    if(isset($_GET['registro'])){
+        if(isset($_GET['guardar'])){
+            $controlador->guardar();
         }else{
-            $proceso->index();
+            $controlador->registro();
         }
+    }else{
+        $controlador->index();
     }
 ?>
