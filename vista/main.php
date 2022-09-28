@@ -7,7 +7,7 @@
                 <a href="index.php?registro" class="btn btn-primary enable fs-5 text" tabindex="-1" role="button" aria-disabled="true">Registro</a>  
             </div>
         </div>
-
+        <h1>AHORA SI CTM</h1>
         <table class="table table-striped font-monospace container-sm centrado">
             <thead>
                 <th>CODIGO</th>
