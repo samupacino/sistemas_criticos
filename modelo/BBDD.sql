@@ -1,3 +1,5 @@
+//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
+
 show databases;
 USE sistemascriticos;
 CREATE TABLE instrumento(
