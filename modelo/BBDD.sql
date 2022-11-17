@@ -3,24 +3,20 @@
 show databases;
 USE sistemascriticos;
 CREATE TABLE instrumento(
-	instID varchar (255) primary key,
-    instDescripcion varchar(255) not null,
-    instNormaCodigo varchar(255) not null
+    codigoInstrumento int primary key,
+	instID varchar (255) unique not null,
+    instNorma varchar(255),
+    instDescripcion varchar(255) 
 );
-USE sistemascriticos;
-SELECT * FROM instrumento;
 
-USE sistemascriticos;
-delete from instrumento;
-
-INSERT INTO instrumento (instID,instDescripcion,instNormaCodigo) VALUES();
 CREATE TABLE calibracion(
 	caliCodigoCalibra integer primary key not null,
-	caliInsID varchar(255),
-    calinormaSACodigo varchar(255),
+    calibraInstrumento varchar (255)  not null,
     caliFrecuenCalibr integer not null,
     caliTipoPeriodo char not null
 );
+alter table calibracion ADD foreign key (calibraInstrumento) references  instrumento (codigoInstrumento);
+
 CREATE TABLE reporteCali(
 	codigoCalibracion integer not null,
     reporteCaliFecha date not null,

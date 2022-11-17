@@ -19,16 +19,11 @@
             
             self::$dsn="mysql:host=localhost;dbname=sistemascriticos";
             self::$username="root";
-            self::$password="samuellujan1989";
-            /*
-            self::$dsn="mysql:host=localhost;dbname=sistemascriticos";
-            self::$username="root";
-            self::$password="root";
-            */
+            self::$password="inesvargas";
         }
         public static function close(&$db,&$ps){
             self::$pdo=null;
-            $pd = null;
+            $db = null;
             $ps = null;   
         }
     }

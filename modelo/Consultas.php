@@ -6,16 +6,16 @@
 
         }
         public function insertar($datos){
-            $ds = null;
+            $db = null;
             $ps = null;
             try{
                 $db = Conexion::open();
-                $ps = $db->prepare("INSERT INTO instrumento (codigo,instID,instDescripcion,instNormaCodigo) VALUES(?,?,?)");
-                $ps->execute(array($datos['instrumento'], $datos['descripcion'], $datos['norma']));  
+                $ps = $db->prepare("INSERT INTO instrumento (codigoInstrumento,instID,instNorma,instDescripcion) VALUES(?,?,?,?)");
+                $ps->execute(array($datos['id'], $datos['instrumento'], $datos['norma'],$datos['descripcion']));  
             }catch(PDOException $e){
                 $_SESSION['mensaje'] = "<p id='mensajeServer' >" . $e->getMessage() ;
             } finally{
-                Conexion::close($ds,$ps);
+                Conexion::close($db,$ps);
             } 
         }
         public function listar(){
@@ -24,13 +24,12 @@
             $resultado = array();
             try{
                 $db = Conexion::open();
-                $ps = $db->prepare("select * from instrumento");
+                $ps = $db->prepare("SELECT * FROM instrumento");
                 $ps->execute();
-                $resultado = $ps->fetchAll(PDO::FETCH_ASSOC);
-            }catch(PDOException $e){
+                $resultado = $ps->fetchAll();
+                print_r($resultado);
+            }catch(PDOexception $e){
                 $_SESSION['mensaje'] = "<p id='mensajeServer' >" . $e->getMessage() ;
-            }finally{
-                Conexion::close($db, $ps);
             }
             return $resultado;
         }

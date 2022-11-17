@@ -10,6 +10,7 @@
             <h2 class="centrado">REGISTRO DE INSTRUMENTOS</h2>
             <table class="table table-striped centrado">
                 <thead>
+                    <th>CODIGO</th>
                     <th >INSTRUMENTO</th>
                     <th>DESCRIPCION</th>
                     <th>SISTEMA CRITICO</th>
@@ -17,9 +18,10 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <td><input type="text" name="id" class="datos"></td>
                         <td><input type="text" name="instrumento" class="datos"></td>
-                        <td><input type="text" name="descripcion" class="datos"></td>
                         <td><input type="text" name="norma" class="datos"></td>
+                        <td><input type="text" name="descripcion" class="datos"></td>
                         <td><input type="" class="btn btn-danger"  name="guardar" id="GUARDAR" value="GUARDAR"></input></td>
                     </tr>
                 </tbody>
@@ -49,13 +51,6 @@
                     document.getElementById("mensajeServer").remove();
                 }
             });
-            /*
-            document.getElementById("prueba").addEventListener("click",function(){
-                const myModal_error = new bootstrap.Modal(document.getElementById('mensajeError'), {
-                     keyboard: false,
-                });
-            myModal_error.show();
-            });*/
         }
     </script>
     
