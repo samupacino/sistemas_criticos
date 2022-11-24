@@ -13,4 +13,5 @@
     }else{
         $controlador->index();
     }
+	echo "DESDE SERVIDOR VIRTUAL BOX ESTOY" ;
 ?>
